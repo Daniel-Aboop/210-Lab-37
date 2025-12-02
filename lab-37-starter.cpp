@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -17,8 +18,27 @@ int main() {
     cout << b << endl;
     cout << (char) b << endl;
     string test="18B51F64622B";
-   cout<<sum_ascii(test);
+   cout<<sum_ascii(test)<<endl;
    // produces 669 i pulled a random code from the text and used it as an example
+
+    //file path : C:\\Users\\hope4\\Desktop\\COMSC 210 Work\\210-Lab-37\\lab-37-data.txt
+    cout<<"Enter file path! ";
+    string filepath;
+    getline(cin,filepath);
+    ifstream file(filepath);
+    if(!file){
+        cout<<"error opening file"<<endl;
+        return 1;
+    }
+    else{
+        cout<<"opened file!"<<endl;
+    }
+    string line;
+    int totalsum=0;
+    while(getline(file,line)){
+        totalsum+=sum_ascii(line);
+    }
+    cout<<totalsum;
     return 0;
 }
 
