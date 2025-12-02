@@ -44,14 +44,12 @@ int main() {
             start++;
             if(start==amount){
             break;
+            }
         }
-        }
-           if(start==amount){
+        if(start==amount){
             break;
         }
-        
     }
-   
     return 0;
 }
 
