@@ -3,9 +3,10 @@
 
 #include <iostream>
 #include <string>
+
 using namespace std;
 
-int sum_ascii();
+int sum_ascii(const string &code);
 
 int main() {
     cout<<endl;
@@ -15,17 +16,17 @@ int main() {
     int b = 66;
     cout << b << endl;
     cout << (char) b << endl;
-    string test="gurt";
+    string test="18B51F64622B";
    cout<<sum_ascii(test);
+   // produces 669 i pulled a random code from the text and used it as an example
     return 0;
 }
 
 int sum_ascii(const string &code){
-    int sum;
+    int sum=0;
     for(char index: code){
         sum+=(int)index;
     }
-
     return sum;
 }
 
