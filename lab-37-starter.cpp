@@ -5,6 +5,7 @@
 #include <string>
 #include <map>
 #include <list>
+#include <algorithm>
 #include <fstream>
 
 using namespace std;
@@ -100,6 +101,20 @@ void print_hash_table(const map<int,list<string>> &hash_table){
     }
 }
 void search_for_key(const map<int,list<string>> &hash_table){
-    string input;
-    cout<<"Enter key to search for:";getline(cin,input);
+    int input;
+    cout<<"Enter key to search for:";cin>>input;
+    auto it=hash_table.find(input);
+    if(it!=hash_table.end()){
+        cout<<"Found key:"<<input<<endl;
+        cout<<"Printing data:"<<endl;
+        cout<<"---------------------------------------"<<endl;
+        for(auto temp:it->second){
+            cout<<temp;
+        }
+
+    }
+    else{
+        cout<<"Key not found"<<endl;
+    }
+
 }
