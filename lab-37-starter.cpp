@@ -61,7 +61,7 @@ int main() {
                 search_for_key(hash_table);
                 break;
             case 3:
-               
+                
                 break;
             case 4:
                 print_hash_table(hash_table);
@@ -121,9 +121,13 @@ void search_for_key(const map<int,list<string>> &hash_table){
 
 }
 void add_key(map<int,list<string>> &hash_table,int size){
+    cout<<endl;
     string input;
-    cout<<"Please enter 12 digit code:";getline(cin,input);
+    cout<<"Please enter 12 digit code:";
+    cin.ignore();
+    getline(cin,input);
     int key=gen_hash_index(input,size);
-    cout<<""
-
+    cout<<"Key given for 12 digit code: "<<key<<endl;
+    hash_table[key].push_back(input);
+    cout<<"Code added!"<<endl;
 }
