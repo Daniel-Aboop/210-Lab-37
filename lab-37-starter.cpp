@@ -14,6 +14,8 @@ int gen_hash_index(const string &code, int size);
 void print_hash_table(const map<int,list<string>> &hash_table);
 void search_for_key(const map<int,list<string>> &hash_table);
 void add_key(map<int,list<string>> &hash_table,int size);
+void remove_key(map<int,list<string>> &hash_table);
+void modify_key(map<int,list<string>> &hash_table);
 
 int main() {
     //file path : C:\\Users\\hope4\\Desktop\\COMSC 210 Work\\210-Lab-37\\lab-37-data.txt
@@ -46,6 +48,7 @@ int main() {
     do{
         cout<<endl;
         cout<<"Hash Table Functions:"<<endl;
+        cout<<"---------------------------------------"<<endl;
         cout<<"[1]Insert Key"<<endl;
         cout<<"[2]Search for Key"<<endl;
         cout<<"[3]Remove key from table"<<endl;
@@ -61,7 +64,7 @@ int main() {
                 search_for_key(hash_table);
                 break;
             case 3:
-                
+
                 break;
             case 4:
                 print_hash_table(hash_table);
@@ -107,8 +110,8 @@ void search_for_key(const map<int,list<string>> &hash_table){
     cout<<"Enter key to search for:";cin>>input;
     auto it=hash_table.find(input);
     if(it!=hash_table.end()){
-        cout<<"Found key:"<<input<<endl;
-        cout<<"Printing data:"<<endl;
+        cout<<"Found key: "<<input<<endl;
+        cout<<"Printing data: "<<endl;
         cout<<"---------------------------------------"<<endl;
         for(auto temp:it->second){
             cout<<temp<<", ";
@@ -123,11 +126,14 @@ void search_for_key(const map<int,list<string>> &hash_table){
 void add_key(map<int,list<string>> &hash_table,int size){
     cout<<endl;
     string input;
-    cout<<"Please enter 12 digit code:";
+    cout<<"Please enter 12 digit code: ";
     cin.ignore();
     getline(cin,input);
     int key=gen_hash_index(input,size);
     cout<<"Key given for 12 digit code: "<<key<<endl;
     hash_table[key].push_back(input);
     cout<<"Code added!"<<endl;
+}
+void remove_key(map<int,list<string>> &hash_table){
+    
 }
