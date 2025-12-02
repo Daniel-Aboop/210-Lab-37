@@ -17,8 +17,8 @@ void search_for_key(const map<int,list<string>> &hash_table);
 int main() {
     //file path : C:\\Users\\hope4\\Desktop\\COMSC 210 Work\\210-Lab-37\\lab-37-data.txt
     cout<<"Enter file path! ";
-    string filepath;
-    getline(cin,filepath);
+    string filepath="C:\\Users\\hope4\\Desktop\\COMSC 210 Work\\210-Lab-37\\lab-37-data.txt";
+   // getline(cin,filepath);
     ifstream file(filepath);
     if(!file){
         cout<<"error opening file"<<endl;
@@ -43,6 +43,7 @@ int main() {
     int choice;
     
     do{
+        cout<<endl;
         cout<<"Hash Table Functions:"<<endl;
         cout<<"[1]Insert Key"<<endl;
         cout<<"[2]Search for Key"<<endl;
@@ -56,7 +57,7 @@ int main() {
                
                 break;
             case 2:
-                
+                search_for_key(hash_table);
                 break;
             case 3:
                
@@ -109,9 +110,9 @@ void search_for_key(const map<int,list<string>> &hash_table){
         cout<<"Printing data:"<<endl;
         cout<<"---------------------------------------"<<endl;
         for(auto temp:it->second){
-            cout<<temp;
+            cout<<temp<<", ";
         }
-
+        cout<<endl;
     }
     else{
         cout<<"Key not found"<<endl;
