@@ -10,6 +10,7 @@
 using namespace std;
 
 int gen_hash_index(const string &code, int size);
+void print_hash_table(const map<int,list<string>> &hash_table);
 
 int main() {
     //file path : C:\\Users\\hope4\\Desktop\\COMSC 210 Work\\210-Lab-37\\lab-37-data.txt
@@ -60,20 +61,7 @@ int main() {
                
                 break;
             case 4:
-               
-                for(auto pair:hash_table){
-                    start=0;
-                    for(auto code:pair.second){
-                        cout<<pair.first<<"  "<<code<<endl;
-                        start++;
-                        if(start==amount){
-                             break;
-                        }
-                    }
-                    if(start==amount){
-                        break;
-                    }
-                }
+                print_hash_table(hash_table);
                 break;
             case 5:
                 
@@ -93,4 +81,21 @@ int gen_hash_index(const string &code, int size){
         sum+=(int)index;
     }
     return sum%size;
+}
+void print_hash_table(const map<int,list<string>> &hash_table){
+    const int amount=100;
+    int start;
+    for(auto pair:hash_table){
+        start=0;
+        for(auto code:pair.second){
+            cout<<pair.first<<"  "<<code<<endl;
+            start++;
+            if(start==amount){
+                break;
+            }
+        }
+        if(start==amount){
+            break;
+        }
+    }
 }
