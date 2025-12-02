@@ -13,6 +13,7 @@ using namespace std;
 int gen_hash_index(const string &code, int size);
 void print_hash_table(const map<int,list<string>> &hash_table);
 void search_for_key(const map<int,list<string>> &hash_table);
+void add_key(map<int,list<string>> &hash_table,int size);
 
 int main() {
     //file path : C:\\Users\\hope4\\Desktop\\COMSC 210 Work\\210-Lab-37\\lab-37-data.txt
@@ -54,7 +55,7 @@ int main() {
         cin>>choice;
         switch(choice){
             case 1:
-               
+                add_key(hash_table,size);
                 break;
             case 2:
                 search_for_key(hash_table);
@@ -117,5 +118,12 @@ void search_for_key(const map<int,list<string>> &hash_table){
     else{
         cout<<"Key not found"<<endl;
     }
+
+}
+void add_key(map<int,list<string>> &hash_table,int size){
+    string input;
+    cout<<"Please enter 12 digit code:";getline(cin,input);
+    int key=gen_hash_index(input,size);
+    cout<<""
 
 }
