@@ -20,8 +20,8 @@ void modify_key(map<int,list<string>> &hash_table);
 int main() {
     //file path : C:\\Users\\hope4\\Desktop\\COMSC 210 Work\\210-Lab-37\\lab-37-data.txt
     cout<<"Enter file path! ";
-    string filepath="C:\\Users\\hope4\\Desktop\\COMSC 210 Work\\210-Lab-37\\lab-37-data.txt";
-   // getline(cin,filepath);
+    string filepath;
+    getline(cin,filepath);
     ifstream file(filepath);
     if(!file){
         cout<<"error opening file"<<endl;
