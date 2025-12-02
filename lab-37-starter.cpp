@@ -145,3 +145,8 @@ void remove_key(map<int,list<string>> &hash_table){
         cout<<"Key not found"<<endl;
     }
 }
+void modify_key(map<int,list<string>> &hash_table){
+    int input;
+    cout<<"Enter key to modify: ";cin>>input;
+    
+}
