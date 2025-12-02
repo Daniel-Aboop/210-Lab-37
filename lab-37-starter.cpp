@@ -49,12 +49,12 @@ int main() {
         cout<<endl;
         cout<<"Hash Table Functions:"<<endl;
         cout<<"---------------------------------------"<<endl;
-        cout<<"[1]Insert Key"<<endl;
-        cout<<"[2]Search for Key"<<endl;
-        cout<<"[3]Remove key from table"<<endl;
-        cout<<"[4]Print out first 100 entries"<<endl;
-        cout<<"[5]Modify key"<<endl;
-        cout<<"[6]Exit Record functions"<<endl;
+        cout<<"[1] Insert Key"<<endl;
+        cout<<"[2] Search for Key"<<endl;
+        cout<<"[3] Remove key from table"<<endl;
+        cout<<"[4] Print out first 100 entries"<<endl;
+        cout<<"[5] Modify key"<<endl;
+        cout<<"[6] Exit Record functions"<<endl;
         cin>>choice;
         switch(choice){
             case 1:
@@ -138,7 +138,7 @@ void remove_key(map<int,list<string>> &hash_table){
     int input;
     cout<<"Enter key to remove: ";cin>>input;
     auto it=hash_table.find(input);
-     if(it!=hash_table.end()){
+    if(it!=hash_table.end()){
       hash_table.erase(it);
     }
     else{
@@ -148,5 +148,11 @@ void remove_key(map<int,list<string>> &hash_table){
 void modify_key(map<int,list<string>> &hash_table){
     int input;
     cout<<"Enter key to modify: ";cin>>input;
-    
+    string input2;
+    cin.ignore();
+    cout<<"Enter new code: ";getline(cin,input2);
+    auto it=hash_table.find(input);
+    if(it!=hash_table.end()){
+        
+    }
 }
