@@ -11,6 +11,7 @@ using namespace std;
 
 int gen_hash_index(const string &code, int size);
 void print_hash_table(const map<int,list<string>> &hash_table);
+void search_for_key(const map<int,list<string>> &hash_table);
 
 int main() {
     //file path : C:\\Users\\hope4\\Desktop\\COMSC 210 Work\\210-Lab-37\\lab-37-data.txt
@@ -37,10 +38,9 @@ int main() {
         int key=gen_hash_index(line,size);
         hash_table[key].push_back(line);
     }
-    const int amount=100;
-    int start;
-      int choice;
-    string input;
+   
+    int choice;
+    
     do{
         cout<<"Hash Table Functions:"<<endl;
         cout<<"[1]Insert Key"<<endl;
@@ -55,7 +55,7 @@ int main() {
                
                 break;
             case 2:
-               
+                
                 break;
             case 3:
                
@@ -98,4 +98,8 @@ void print_hash_table(const map<int,list<string>> &hash_table){
             break;
         }
     }
+}
+void search_for_key(const map<int,list<string>> &hash_table){
+    string input;
+    cout<<"Enter key to search for:";getline(cin,input);
 }
