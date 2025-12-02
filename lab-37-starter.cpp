@@ -64,7 +64,7 @@ int main() {
                 search_for_key(hash_table);
                 break;
             case 3:
-
+                remove_key(hash_table);
                 break;
             case 4:
                 print_hash_table(hash_table);
@@ -107,7 +107,7 @@ void print_hash_table(const map<int,list<string>> &hash_table){
 }
 void search_for_key(const map<int,list<string>> &hash_table){
     int input;
-    cout<<"Enter key to search for:";cin>>input;
+    cout<<"Enter key to search for: ";cin>>input;
     auto it=hash_table.find(input);
     if(it!=hash_table.end()){
         cout<<"Found key: "<<input<<endl;
@@ -135,5 +135,13 @@ void add_key(map<int,list<string>> &hash_table,int size){
     cout<<"Code added!"<<endl;
 }
 void remove_key(map<int,list<string>> &hash_table){
-    
+    int input;
+    cout<<"Enter key to remove: ";cin>>input;
+    auto it=hash_table.find(input);
+     if(it!=hash_table.end()){
+      hash_table.erase(it);
+    }
+    else{
+        cout<<"Key not found"<<endl;
+    }
 }
