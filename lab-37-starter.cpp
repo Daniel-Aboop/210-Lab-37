@@ -25,21 +25,24 @@ int main() {
         cout<<"opened file!"<<endl;
     }
     string line;
-    int totalsum=0;
+    int size;
+    while (getline(file, line)) {
+        size++;
+    }
     map<int,list<string>>hash_table;
     while(getline(file,line)){
-        //totalsum+=sum_ascii(line);
+        int key=gen_hash_index(line,size);
+        hash_table[key].push_back(line);
     }
-    cout<<totalsum;
 
    
     return 0;
 }
 
-int gen_hash_index(const string &code){
+int gen_hash_index(const string &code, int size){
     int sum=0;
     for(char index: code){
         sum+=(int)index;
     }
-    return sum;
+    return sum%size;
 }
