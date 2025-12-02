@@ -70,7 +70,7 @@ int main() {
                 print_hash_table(hash_table);
                 break;
             case 5:
-                
+                modify_key(hash_table);
                 break;
             case 6:
                 cout<<"Exiting...";
@@ -150,9 +150,15 @@ void modify_key(map<int,list<string>> &hash_table){
     cout<<"Enter key to modify: ";cin>>input;
     string input2;
     cin.ignore();
-    cout<<"Enter new code: ";getline(cin,input2);
+    cout<<"Enter new 12 digit code: ";getline(cin,input2);
     auto it=hash_table.find(input);
     if(it!=hash_table.end()){
-        
+        auto &temp=it->second;
+        for(auto &pair:temp){
+            pair=input2;
+        }
+    }
+    else{
+        cout<<"Key not found"<<endl;
     }
 }
