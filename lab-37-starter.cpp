@@ -25,22 +25,31 @@ int main() {
         cout<<"opened file!"<<endl;
     }
     string line;
-    int size;
+    int size=0;
     while (getline(file, line)) {
         size++;
     }
+    file.clear();
+    file.seekg(0);
     map<int,list<string>>hash_table;
     while(getline(file,line)){
         int key=gen_hash_index(line,size);
         hash_table[key].push_back(line);
     }
     const int amount=100;
+    int start=0;
     for(auto pair:hash_table){
         for(auto code:pair.second){
-            cout<<pair.first<<"  "<<code;
+            cout<<pair.first<<"  "<<code<<endl;
+            start++;
+            if(start==amount){
+            break;
         }
-        if()
-
+        }
+           if(start==amount){
+            break;
+        }
+        
     }
    
     return 0;
