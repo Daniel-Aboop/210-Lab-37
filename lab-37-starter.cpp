@@ -1,4 +1,4 @@
-// COMSC-210 | Lab 37 | Daniel Santisteban
+// COMSC-210 | Lab 38 | Daniel Santisteban
 // IDE used: VS Code
 
 #include <iostream>
@@ -37,19 +37,53 @@ int main() {
         hash_table[key].push_back(line);
     }
     const int amount=100;
-    int start=0;
-    for(auto pair:hash_table){
-        for(auto code:pair.second){
-            cout<<pair.first<<"  "<<code<<endl;
-            start++;
-            if(start==amount){
-            break;
-            }
+    int start;
+      int choice;
+    string input;
+    do{
+        cout<<"Hash Table Functions:"<<endl;
+        cout<<"[1]Insert Key"<<endl;
+        cout<<"[2]Search for Key"<<endl;
+        cout<<"[3]Remove key from table"<<endl;
+        cout<<"[4]Print out first 100 entries"<<endl;
+        cout<<"[5]Modify key"<<endl;
+        cout<<"[6]Exit Record functions"<<endl;
+        cin>>choice;
+        switch(choice){
+            case 1:
+               
+                break;
+            case 2:
+               
+                break;
+            case 3:
+               
+                break;
+            case 4:
+               
+                for(auto pair:hash_table){
+                    start=0;
+                    for(auto code:pair.second){
+                        cout<<pair.first<<"  "<<code<<endl;
+                        start++;
+                        if(start==amount){
+                             break;
+                        }
+                    }
+                    if(start==amount){
+                        break;
+                    }
+                }
+                break;
+            case 5:
+                
+                break;
+            case 6:
+                cout<<"Exiting...";
+                break;
+
         }
-        if(start==amount){
-            break;
-        }
-    }
+    }while(choice!=6);
     return 0;
 }
 
