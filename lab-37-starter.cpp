@@ -9,7 +9,7 @@
 
 using namespace std;
 
-int gen_hash_index(const string &code);
+int gen_hash_index(const string &code, int size);
 
 int main() {
     //file path : C:\\Users\\hope4\\Desktop\\COMSC 210 Work\\210-Lab-37\\lab-37-data.txt
@@ -34,7 +34,14 @@ int main() {
         int key=gen_hash_index(line,size);
         hash_table[key].push_back(line);
     }
+    const int amount=100;
+    for(auto pair:hash_table){
+        for(auto code:pair.second){
+            cout<<pair.first<<"  "<<code;
+        }
+        if()
 
+    }
    
     return 0;
 }
